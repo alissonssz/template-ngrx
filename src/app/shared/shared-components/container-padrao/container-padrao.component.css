@@ -1,0 +1,19 @@
+.painel {
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 2px 0px, rgba(0, 0, 0, 0.1) 0px 2px 15px 0px;
+    border-width: 0px;
+    border-style: initial;
+    border-color: initial;
+    border-image: initial;
+    border-radius: 0px;
+}
+
+.card-body {
+    flex: 1 1 auto;
+    padding: 0px 1.25rem  1.25rem  1.25rem ;
+}
+
+.titulo {
+    color: white;
+    background-color: rgb(75, 147, 230);
+    display: block;
+}

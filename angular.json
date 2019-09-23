@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "template-ngrx": {
+    "template-bs": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/template-ngrx",
+            "outputPath": "dist/template-bs",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -24,9 +24,14 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.css",
+              "node_modules/bootstrap/dist/css/bootstrap.min.css"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/jquery/dist/jquery.min.js",
+              "node_modules/popper.js/dist/umd/popper.min.js",
+              "node_modules/bootstrap/dist/js/bootstrap.min.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -58,18 +63,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "template-ngrx:build"
+            "browserTarget": "template-bs:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "template-ngrx:build:production"
+              "browserTarget": "template-bs:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "template-ngrx:build"
+            "browserTarget": "template-bs:build"
           }
         },
         "test": {
@@ -106,15 +111,15 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "template-ngrx:serve"
+            "devServerTarget": "template-bs:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "template-ngrx:serve:production"
+              "devServerTarget": "template-bs:serve:production"
             }
           }
         }
       }
     }},
-  "defaultProject": "template-ngrx"
+  "defaultProject": "template-bs"
 }
