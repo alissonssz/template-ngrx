@@ -11,6 +11,8 @@ import { SharedComponentsModule } from './shared/shared-components/shared-compon
 import { SharedPipesModule } from './shared/shared-pipes/shared-pipes.module';
 import { AppRoutingModule } from './app-routing.module';
 import { RouterModule } from '@angular/router';
+import { StoreModule } from '@ngrx/store';
+import { reducers, metaReducers } from './core/reducers';
 
 @NgModule({
   declarations: [
@@ -25,7 +27,14 @@ import { RouterModule } from '@angular/router';
     PublicModule,
     SharedDirectivesModule,
     SharedComponentsModule,
-    SharedPipesModule
+    SharedPipesModule,
+    StoreModule.forRoot(reducers, {
+      metaReducers,
+      runtimeChecks: {
+        strictStateImmutability: true,
+        strictActionImmutability: true
+      }
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]
